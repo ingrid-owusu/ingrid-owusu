@@ -1,0 +1,16 @@
+name: unsung
+on:
+  schedule:
+    - cron: "0 3 * * *"   # daily
+  workflow_dispatch:
+permissions:
+  contents: write
+jobs:
+  card:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - uses: ingrid-owusu/unsung@v1
+        with:
+          theme: dark
+          since: all
